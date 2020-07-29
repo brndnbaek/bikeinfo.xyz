@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include "head.njk" %} {% if site.env %}
+		<!-- capture the CSS content as a Liquid variable -->
+		{% set css %}{% include "app.compiled.css" %}{% endset %}
+		<style>
+			{{ css | safe }}
+		</style>
+		{% else %}
+		<link rel="stylesheet" href="/static/app.compiled.css" />
+		{% endif %}
+	</head>
+	<body class="h-screen">
+		<div class="flex flex-col">
+			<div
+				class="flex justify-end flex-1 bg-fixed bg-no-repeat bg-contain"
+				style="background-image: url(/static/korvelo_intoFog.jpeg);"
+			>
+				<img
+					class="flex-1"
+					src="/static/korvelo_intoFog.jpeg"
+					alt=""
+					srcset=""
+					style="position: fixed; top: 0; right: 100px; z-index: -1;"
+				/>
+			</div>
+
+			<div
+				class="flex-col justify-end flex-1 bg-fixed bg-no-repeat"
+				style="background-image: url(./static/korvelo_groupIncoming.jpeg);"
+			>
+				<div class="text-xl text-white bg-black">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+						quas.
+					</p>
+				</div>
+				<img
+					class="bg-fixed"
+					src="./static/korvelo_groupIncoming.jpeg"
+					alt=""
+					srcset=""
+				/>
+			</div>
+			<div class="text-xl text-white bg-black">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, quas.
+				</p>
+			</div>
+		</div>
+		{# {{ content | safe }} #}
+	</body>
+	<script src="/static/app.bundled.js"></script>
+</html>
