@@ -1,3 +1,18 @@
 @tailwind base;
+
+@font-face {
+	font-family: "GmarketSansBold";
+	src: url(/static/GmarketSansBold.woff) format("woff");
+}
+@font-face {
+	font-family: "GmarketSansMedium";
+	src: url(/static/GmarketSansMedium.woff) format("woff");
+}
+@font-face {
+	font-family: "GmarketSansLight";
+	src: url(/static/GmarketSansLight.woff) format("woff");
+}
+
 @tailwind components;
+
 @tailwind utilities;

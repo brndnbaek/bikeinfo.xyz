@@ -1,6 +1,11 @@
 module.exports = {
 	theme: {
 		extend: {
+			fontFamily: {
+				korTitle: "GmarketSansBold",
+				korSubtitle: "GmarketSansMedium",
+				korText: "GmarketSansLight",
+			},
 			colors: {
 				"ws-blue": {
 					100: "#E6F0FF",

@@ -66,4 +66,21 @@ a {
 		transform: rotate(359deg);
 	}
 }
+
+.moveBike {
+	/* transform: rotateZ(45deg); */
+	animation: slideBike 10s linear infinite;
+}
+
+@keyframes slideBike {
+	0% {
+		transform: translateX(0rem);
+	}
+	50% {
+		transform: translateX(10rem);
+	}
+	100% {
+		transform: translateX(20rem);
+	}
+}
 /* purgecss end ignore */
