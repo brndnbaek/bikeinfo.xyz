@@ -1,11 +1,18 @@
 ---
 layout: landing.njk
-title: Bikeinfo web portal for Team Korvelo
+title: Team Korvelo
+description: 슬기로운 자덕 생활에 도움이될 유용한 정보를 공유하는 공간입니다. 코르벨로 회원들의 라이딩 정보와 동호회 안내를 보실수 있습니다. 
 ---
 
 <main id="main" class="max-w-md px-4 mx-auto text-center">
-    <img src="/static/icon.svg" alt="Rocket icon" class="w-12 mx-auto my-4 rocket">
-    <h1 class="mb-2 text-xl font-bold">Bikeinfo.xyz - Team Korvelo <span class="font-light text-gray-500">v{{ pkg.version }}</span></h1>
+    <svg class="items-center w-24 h-24 mx-auto rocket" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="10.806" y1="75" x2="140.488" y2="75">
+    <stop offset="0" stop-color="#ff1bc6"/>
+    <stop offset="1" stop-color="#0066a6"/>
+  </linearGradient>
+  <path d="M114 60.6c-2.5 0-4.8.3-7.1 1l-3.6-9.7h.4c4.2 0 7.7-3.4 7.7-7.7s-3.4-7.7-7.7-7.7h-8.2c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5h8.2c1.5 0 2.7 1.2 2.7 2.7 0 1.5-1.2 2.7-2.7 2.7H55.4l-1.5-2.8h7.3c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5H47.9l-2.5-1.9c-1.1-.8-2.7-.7-3.5.4-.8 1.1-.7 2.7.4 3.5l3.2 2.5c.4.3 1 .5 1.5.5h1.5c0 .4.1.9.3 1.3l2.2 4.1L45.7 62c-2.7-.9-5.5-1.4-8.5-1.4-14.6 0-26.4 11.9-26.4 26.4 0 14.6 11.9 26.4 26.4 26.4 13.4 0 24.5-10.1 26.2-23.1h2.8c.9 3.5 3.6 6.2 7 7.1v3c0 1.4 1.1 2.5 2.5 2.5H83c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5h-4.8v-.5c4.2-1.1 7.3-4.9 7.3-9.5 0-2.5-1-4.8-2.6-6.6l16.2-26.5 3.1 8.3c-8.7 4.3-14.7 13.3-14.7 23.7 0 14.6 11.9 26.4 26.4 26.4s26.4-11.9 26.4-26.4c.2-14.3-11.7-26.2-26.3-26.2zM73.1 78.7L71.6 76h1.7v2.6c-.1.1-.1.1-.2.1zm5.2 0v-5.1c0-1.4-1.1-2.5-2.5-2.5h-6.9L58.1 51.9h37.2l-16.5 27c-.2-.1-.3-.2-.5-.2zM54.2 55l14.6 26.2c-1.1 1.2-2 2.6-2.4 4.2h-2.7A26.5 26.5 0 0 0 50.3 64l3.9-9zm4.4 30.4H41l7.2-16.7c5.9 3.5 9.9 9.6 10.4 16.7zm-21.4 23.1c-11.8 0-21.4-9.6-21.4-21.4 0-11.8 9.6-21.4 21.4-21.4 2.3 0 4.4.4 6.5 1L35 87c-.3.8-.3 1.7.2 2.4s1.2 1.1 2.1 1.1h21.1c-1.6 10.2-10.5 18-21.2 18zm41.1-16.3v-5c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5v5c-1.4-.8-2.3-2.3-2.3-4.1 0-2.6 2.2-4.8 4.8-4.8.9 0 1.8.3 2.5.7.1 0 .1.1.2.1h.1c1.2.9 2 2.3 2 3.9 0 1.8-1 3.3-2.3 4.2zm35.7 16.3c-11.8 0-21.4-9.6-21.4-21.4 0-8.2 4.6-15.4 11.4-19l7.7 20.7c.4 1 1.3 1.6 2.3 1.6.3 0 .6-.1.9-.2 1.3-.5 2-1.9 1.5-3.2l-7.7-20.8c1.7-.4 3.5-.7 5.3-.7 11.8 0 21.4 9.6 21.4 21.4.1 12-9.5 21.6-21.4 21.6z" fill="url(#SVGID_1_)"/>
+</svg>
+    <h1 class="mb-2">Bikeinfo.xyz - Team Korvelo <span class="font-light text-gray-500">v{{ pkg.version }}</span></h1>
     <p>팀 코르벨로 안내와 바이크 인포 사용방법을 다루는 페이지 입니다.</p>
 
     <ul class="my-4 md:flex">
@@ -16,9 +23,5 @@ title: Bikeinfo web portal for Team Korvelo
             <a href="#" class="block p-3 font-bold leading-tight text-black no-underline border-2 rounded hover:bg-gray-100">Get started</a>
         </li>
     </ul>
-    <footer class="text-sm text-gray-500">
-       <p class="flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="w-4 mr-1"><path class="text-gray-100 fill-current" d="M32 5H4C1.791 5 0 6.791 0 9v18c0 2.209 1.791 4 4 4h28c2.209 0 4-1.791 4-4V9c0-2.209-1.791-4-4-4z"/><path class="fill-current text-ws-blue-500" d="M13 18S0 8.586 0 8.895v18.21C0 27.414 13 18 13 18zm5 3S3.697 31 4.07 31h27.859C32.303 31 18 21 18 21zm5-3s13 9.414 13 9.105V8.895C36 8.586 23 18 23 18zm-5-3S3.697 5 4.07 5h27.859C32.303 5 18 15 18 15z"/></svg> <span>Proudly crafted in Scotland by <a href="https://www.chriscollins.me">Chris Collins</a></span></p>
-        <p>Go and build something great! 🥳</p>
-    </footer>
+   
 </main>
