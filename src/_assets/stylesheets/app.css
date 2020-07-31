@@ -68,7 +68,6 @@ a {
 }
 
 .moveBike {
-	/* transform: rotateZ(45deg); */
 	animation: slideBike 10s linear infinite;
 }
 
