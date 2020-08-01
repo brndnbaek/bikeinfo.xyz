@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include "head.njk" %} {% if site.env %}
+		<!-- capture the CSS content as a Liquid variable -->
+		{% set css %}{% include "app.compiled.css" %}{% endset %}
+		<style>
+			{{ css | safe }}
+		</style>
+		{% else %}
+		<link rel="stylesheet" href="/static/app.compiled.css" />
+		{% endif %}
+	</head>
+	<body class="h-screen max-w-6xl m-0 mx-auto antialiased">
+		<input type="checkbox" id="toggle" class="input-toggler" />
+		<label for="toggle" class="menu-toggler">
+			<span class="menu-toggler-line"></span>
+			<span class="menu-toggler-line"></span>
+			<span class="menu-toggler-line"></span>
+		</label>
+
+		<aside class="sidebar">
+			<ul class="menu">
+				<li><a class="menu-link" href="/">Home</a></li>
+				<li><a class="menu-link" href="#">Online Forum</a></li>
+				<li><a class="menu-link" href="#">Store</a></li>
+				<li><a class="menu-link" href="#">Team Korvelo</a></li>
+				<li><a class="menu-link" href="#">Bike</a></li>
+				<li><a class="menu-link" href="#">Riding</a></li>
+			</ul>
+		</aside>
+	</body>
+	<script src="/static/app.bundled.js"></script>
+	<script>
+		function navmenuToggle() {
+			var openBtn = document.getElementById("openBtn");
+			var closeBtn = document.getElementById("closeBtn");
+			var overlayMenu = document.getElementById("overlayMenu");
+
+			console.log("abcd");
+			openBtn.classList.toggle("hidden");
+			closeBtn.classList.toggle("hidden");
+			overlayMenu.classList.toggle("block");
+		}
+	</script>
+</html>
