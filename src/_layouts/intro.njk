@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include "head.njk" %} {% if site.env %}
+		<!-- capture the CSS content as a Liquid variable -->
+		{% set css %}{% include "app.compiled.css" %}{% endset %}
+		<style>
+			{{ css | safe }}
+		</style>
+		{% else %}
+		<link rel="stylesheet" href="/static/app.compiled.css" />
+		{% endif %}
+	</head>
+
+	<body class="h-screen max-w-6xl m-0 mx-auto antialiased">
+	{% include "overlayMenu.njk" %}
+		<div class="mb-8">
+			<h1 class="text-6xl font-extrabold text-center text-gray-200 uppercase font-korTitle ">Bikeinfo.XYZ</h1>
+		</div>
+	<div class="grid grid-flow-row grid-cols-1 gap-10 md:grid-flow-col md:grid-cols-3" >
+
+		<div class="flex flex-col border-t-2" >
+			<div class="flex flex-row-reverse justify-between flex-shrink my-2">
+				<p class="w-3/5 text-xl text-right text-pink-500 font-korTitle">Team Korvelo member emabrace into the Fog of Skyline national park.</p>
+				<h1 class="text-xs text-gray-300 uppercase font-korSubtitle">Korvelo</h1>
+			</div>
+			<img class="object-cover" src="static/korvelo_intoFog.jpeg" alt="" srcset="">
+		</div>
+		<div class="flex flex-col border-t-2">
+			<div class="flex flex-row-reverse justify-between my-2">
+				<p class="w-3/5 text-xl text-right text-pink-500 font-korTitle">Chat time</p>
+				<h1 class="text-xs text-gray-300 uppercase font-korSubtitle">Korvelo</h1>
+			</div>
+			<img class="object-cover" src="static/korvelo_groupIncoming.jpeg" alt="" srcset="">
+		</div>
+		<div class="flex flex-col border-t-2">
+			<div class="flex flex-row-reverse justify-between my-2">
+				<p class="w-3/5 text-xl text-right text-pink-500 font-korTitle">2020 Biggest meet up</p>
+				<h1 class="text-xs text-gray-300 uppercase font-korSubtitle">Korvelo</h1>
+			</div>
+			<img class="object-cover " src="static/korvelo_groupPic.jpeg" alt="" srcset="">
+		</div>
+
+		
+	</div>
+		</body>
+	<script src="/static/app.bundled.js"></script>
+	<script>
+		function navToggle() {
+			var btn = document.getElementById("courseBtn");
+			var overlay = document.getElementById("courseOverlay");
+			var xbtn = document.getElementById("closeBtn");
+
+			console.log("abcd");
+			// btn.classList.toggle("open");
+			overlay.classList.toggle("hidden");
+			// xbtn.classList.toggle("block");
+		}
+	</script>
+</html>
