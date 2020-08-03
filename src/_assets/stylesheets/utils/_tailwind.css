@@ -3,14 +3,17 @@
 @font-face {
 	font-family: "GmarketSansBold";
 	src: url(/static/GmarketSansBold.woff) format("woff");
+	font-display: swap;
 }
 @font-face {
 	font-family: "GmarketSansMedium";
 	src: url(/static/GmarketSansMedium.woff) format("woff");
+	font-display: swap;
 }
 @font-face {
 	font-family: "GmarketSansLight";
 	src: url(/static/GmarketSansLight.woff) format("woff");
+	font-display: swap;
 }
 
 @tailwind components;
