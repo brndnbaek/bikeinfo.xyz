@@ -113,8 +113,8 @@ a {
 
 .neomorph {
 	box-shadow: 
-    8px 8px 12px 0 rgba(0, 0, 0, 0.6),
-    -8px -8px 10px 0 rgba(59, 59, 59, 0.2);
+    8px 8px 12px 0 rgba(0, 0, 0, 0.7),
+    -4px -4px 6px 0 rgba(59, 59, 59, 0.4);
 }
 
 /* purgecss end ignore */

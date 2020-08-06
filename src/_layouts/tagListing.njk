@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include "head.njk" %} {% if site.env %}
+	<!-- capture the CSS content as a Liquid variable -->
+	{% set css %}{% include "app.compiled.css" %}{% endset %}
+	<style>
+		{
+				{
+				css | safe
+			}
+		}
+	</style>
+	{% else %}
+	<link rel="stylesheet" href="/static/app.compiled.css" />
+	{% endif %}
+
+</head>
+
+<body class="w-screen h-screen p-0 antialiased text-gray-200">
+	{% include "overlayMenu.njk" %}
+	<!-- vertical stripes  -->
+	<div class="relative">
+		<div class="neomorph absolute top-0 bg-pink-400 z-0" style="right:14%; width:2%; height:2500px;"></div>
+		<div class="absolute h-screen top-0 bg-gray-300 z-0" style="right:12%; width:2%; height:2500px;"></div>
+		<h1 class="absolute text-gray-300 text-2xl md:text-4xl font-serif text-center z-20"
+			style="right:6%; writing-mode: vertical-rl; text-orientation:sideways;height:600px;">Welcome to Bikeinfo.xyz
+		</h1>
+	</div>
+	<!-- top title -->
+	<nav class="pl-5 md:pl-40">
+		<a href="/" class="underline bg-pink-500 text-pink-500">
+			<h1 class="font-extrabold text-gray-200 font-sans text-4xl md:text-6xl text-left uppercase">bikeinfo.xyz
+			</h1>
+		</a>
+	</nav>
+
+	
+	  <div class="text-red-300 container mx-auto w-3/4 text-2xl">
+		  <h1 class="mt-5 mb-5">Tags</h1>
+
+{% for tag in collections.tagList %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+
+  <a href="{{ tagUrl | url }}" class="border bg-gray-900 rounded-md p-2 no-underline text-gray-200 mr-2 uppercase">{{ tag }}</a>
+{% endfor %}
+	  </div>
+</body>
+<script src="/static/app.bundled.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+<script>
+	function navToggle() {
+		var btn = document.getElementById("courseBtn");
+		var overlay = document.getElementById("courseOverlay");
+		var xbtn = document.getElementById("closeBtn");
+
+		console.log("abcd");
+		// btn.classList.toggle("open");
+		overlay.classList.toggle("hidden");
+		// xbtn.classList.toggle("block");
+	}
+
+	window.onload = function () {
+		lax.setup() // init
+
+		const updateLax = () => {
+			lax.update(window.scrollY)
+			window.requestAnimationFrame(updateLax)
+		}
+
+		window.requestAnimationFrame(updateLax)
+	}
+</script>
+
+</html>
