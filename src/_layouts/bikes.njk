@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include "head.njk" %} {% if site.env %}
+	<!-- capture the CSS content as a Liquid variable -->
+	{% set css %}{% include "app.compiled.css" %}{% endset %}
+	<style>
+		{
+				{
+				css | safe
+			}
+		}
+	</style>
+	{% else %}
+	<link rel="stylesheet" href="/static/app.compiled.css" />
+	{% endif %}
+	
+</head>
+
+<body class="w-screen h-screen p-0 antialiased text-gray-200">
+	{% include "overlayMenu.njk" %}
+	<!-- vertical stripes  -->
+	<div class="relative">
+		<div class="neomorph absolute top-0 bg-pink-400 z-0" style="right:14%; width:2%; height:2500px;"></div>
+		<div class="absolute h-screen top-0 bg-gray-300 z-0" style="right:12%; width:2%; height:2500px;"></div>
+		<h1 class="absolute text-gray-300 text-2xl md:text-4xl font-serif text-center z-20"
+			style="right:6%; writing-mode: vertical-rl; text-orientation:sideways;height:600px;">Welcome to Bikeinfo.xyz
+		</h1>
+	</div>
+	<!-- top title -->
+	<nav class="pl-5 md:pl-40">
+		<a href="/" class="underline bg-pink-500 text-pink-500">
+			<h1 class="font-extrabold text-gray-200 font-sans text-4xl md:text-6xl text-left uppercase">bikeinfo.xyz
+			</h1>
+		</a>
+	</nav>
+
+	<div class="relative imageOverlay flex flex-col content-center mt-10 w-4/5 ml-5 z-0 pb-24" style="">
+		<style>
+			.imageOverlay::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width:90%;
+				height:90%;
+				background-image: radial-gradient(ellipse closest-side, rgba(0,0,0,0.6), #090909), url({{heroImage}});
+				background-size: cover;
+				background-repeat: no-repeat;
+				opacity: 0.9;
+			}
+		</style>
+		<div class="relative w-5/6  ">
+			<div class="z-20 w-full relative">
+				<h1 class="text-gray-200 font-korTitle text-3xl mb-10">{{title}}</h1>
+				<p class="text-gray-400 font-sans text-base md:text-xl w-5/6 mb-4 line truncate">{{description}}</p>
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script src="/static/app.bundled.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+<script>
+	function navToggle() {
+		var btn = document.getElementById("courseBtn");
+		var overlay = document.getElementById("courseOverlay");
+		var xbtn = document.getElementById("closeBtn");
+
+		console.log("abcd");
+		// btn.classList.toggle("open");
+		overlay.classList.toggle("hidden");
+		// xbtn.classList.toggle("block");
+	}
+
+	window.onload = function () {
+		lax.setup() // init
+
+		const updateLax = () => {
+			lax.update(window.scrollY)
+			window.requestAnimationFrame(updateLax)
+		}
+
+		window.requestAnimationFrame(updateLax)
+	}
+</script>
+
+</html>

@@ -18,6 +18,27 @@
 </head>
 
 <body class="w-screen h-screen p-0 antialiased text-gray-200">
+	<svg
+			class="absolute h-16 mt-8 moveBike z-50"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 150 150"
+		>
+			<linearGradient
+				id="SVGID_1_"
+				gradientUnits="userSpaceOnUse"
+				x1="10.806"
+				y1="75"
+				x2="140.488"
+				y2="75"
+			>
+				<stop offset="0" stop-color="#ff1bc6" />
+				<stop offset="1" stop-color="#0066a6" />
+			</linearGradient>
+			<path
+				d="M114 60.6c-2.5 0-4.8.3-7.1 1l-3.6-9.7h.4c4.2 0 7.7-3.4 7.7-7.7s-3.4-7.7-7.7-7.7h-8.2c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5h8.2c1.5 0 2.7 1.2 2.7 2.7 0 1.5-1.2 2.7-2.7 2.7H55.4l-1.5-2.8h7.3c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5H47.9l-2.5-1.9c-1.1-.8-2.7-.7-3.5.4-.8 1.1-.7 2.7.4 3.5l3.2 2.5c.4.3 1 .5 1.5.5h1.5c0 .4.1.9.3 1.3l2.2 4.1L45.7 62c-2.7-.9-5.5-1.4-8.5-1.4-14.6 0-26.4 11.9-26.4 26.4 0 14.6 11.9 26.4 26.4 26.4 13.4 0 24.5-10.1 26.2-23.1h2.8c.9 3.5 3.6 6.2 7 7.1v3c0 1.4 1.1 2.5 2.5 2.5H83c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5h-4.8v-.5c4.2-1.1 7.3-4.9 7.3-9.5 0-2.5-1-4.8-2.6-6.6l16.2-26.5 3.1 8.3c-8.7 4.3-14.7 13.3-14.7 23.7 0 14.6 11.9 26.4 26.4 26.4s26.4-11.9 26.4-26.4c.2-14.3-11.7-26.2-26.3-26.2zM73.1 78.7L71.6 76h1.7v2.6c-.1.1-.1.1-.2.1zm5.2 0v-5.1c0-1.4-1.1-2.5-2.5-2.5h-6.9L58.1 51.9h37.2l-16.5 27c-.2-.1-.3-.2-.5-.2zM54.2 55l14.6 26.2c-1.1 1.2-2 2.6-2.4 4.2h-2.7A26.5 26.5 0 0 0 50.3 64l3.9-9zm4.4 30.4H41l7.2-16.7c5.9 3.5 9.9 9.6 10.4 16.7zm-21.4 23.1c-11.8 0-21.4-9.6-21.4-21.4 0-11.8 9.6-21.4 21.4-21.4 2.3 0 4.4.4 6.5 1L35 87c-.3.8-.3 1.7.2 2.4s1.2 1.1 2.1 1.1h21.1c-1.6 10.2-10.5 18-21.2 18zm41.1-16.3v-5c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5v5c-1.4-.8-2.3-2.3-2.3-4.1 0-2.6 2.2-4.8 4.8-4.8.9 0 1.8.3 2.5.7.1 0 .1.1.2.1h.1c1.2.9 2 2.3 2 3.9 0 1.8-1 3.3-2.3 4.2zm35.7 16.3c-11.8 0-21.4-9.6-21.4-21.4 0-8.2 4.6-15.4 11.4-19l7.7 20.7c.4 1 1.3 1.6 2.3 1.6.3 0 .6-.1.9-.2 1.3-.5 2-1.9 1.5-3.2l-7.7-20.8c1.7-.4 3.5-.7 5.3-.7 11.8 0 21.4 9.6 21.4 21.4.1 12-9.5 21.6-21.4 21.6z"
+				fill="url(#SVGID_1_)"
+			/>
+		</svg>
 	{% include "overlayMenu.njk" %}
 	<!-- vertical stripes  -->
 	<div class="relative">
@@ -49,15 +70,14 @@
 			ride with us<br>korvelo weekly ride</div>
 
 		<section
-			class="col-start-1 col-span-8 row-start-1 row-span-3 md:col-start-4 md:col-span-4 md:row-start-1 md:row-span-4">
+			class="col-start-1 col-span-8 row-start-1 row-span-3 md:col-start-4 md:col-span-4 md:row-start-1 md:row-span-4 ">
 			<div class="flex flex-col w-full flex-wrap">
-
 				<div class="relative">
 					<div class="absolute text-md md:text-3xl text-gray-900 font-extrabold uppercase text-right"
 						style="right:15%; top:2%;">blog<br>review<br>New rider info</div>
 					<div class="absolute text-lg md:text-4xl text-orange-200 font-extrabold uppercase"
 						style="left:20%; top:80%;">ready to join?</div>
-					<img class="neomorph object-cover object-left" src="static/korvelo_intoFog.jpeg" alt="" srcset="">
+					<img class="neomorph object-cover object-left" src="/static/korvelo_intoFog.jpeg" alt="" srcset="">
 				</div>
 			</div>
 		</section>
@@ -118,23 +138,25 @@
 
 	<div id="nPlusOne" class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 z-20 neomorph bg-gray-900"
 		style="background-color:101010;">
-		<a href="/collections/nPlusOne" class="underline text-yellow-500">
+		<a href="/bikes" class="underline text-yellow-500">
 			<h1 class="p-2 md:p-2 ml-4 font-bold font-serif text-gray-200 text-base md:text-2xl">
 				Rule #12 - <i>The correct number of bikes to own is N + 1.</i> </h1>
 		</a>
 	</div>
 
 
-	<section class="flex flex-row w-11/12 mx-auto mt-5" style="height:300px;">
+	<section class="flex flex-row w-11/12 mx-auto mt-5" style="">
 		<div class="overflow-x-scroll flex flex-row rounded w-11/12 mx-auto z-20">
+			{% for bike in collections.bikes %}
 			<div class="p-4 flex-col flex flex-shrink-0">
 				<div class="relative">
 					<h1 class="absolute text-white text-2xl pt-4"
 						style="backdrop-filter:blur(5px) hue-rotate(120deg);height:300px;writing-mode: vertical-rl; text-orientation:sideways">
-						Tarmac SL7</h1>
+						{{bike.data.title}}</h1>
 				</div>
-				<img src="https://source.unsplash.com/250x300/?bicycle" class="neomorph object-cover" alt="" srcset="">
+				<a href="{{bike.url}}"><img src="{{bike.data.heroImage}}" class="object-cover object-center" alt="{{bike.data.title}}" srcset="" style="width:250px; height:300px;"></a>
 			</div>
+			{% endfor %}
 
 		</div>
 	</section>
@@ -159,7 +181,19 @@
 		</div>
 	</section>
 
-	<div class="h-10">placeholder</div>
+	<div class="text-gray-200">
+
+		<p>line break....</p>
+
+		{% for tag in collections.tagList %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+{% endfor %}
+
+{% set postslist = collections.bikes %}
+{% include "postslist.njk" %}
+<p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>
+	</div>
 	<div>
 
 	</div>
