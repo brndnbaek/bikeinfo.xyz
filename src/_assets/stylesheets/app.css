@@ -17,9 +17,22 @@ button:focus {
 }
 
 a {
-	@apply underline text-ws-blue-500;
+	@apply text-gray-300 font-korSubtitle;
+}
+h3 {
+	@apply text-xl font-korTitle;
+}
+h2 {
+	@apply text-2xl font-korTitle;
 }
 
+h1 {
+	@apply text-4xl font-korTitle;
+}
+
+p {
+	@apply font-korSubtitle leading-relaxed;
+}
 .rocket {
 	animation: rocket 0.7s linear infinite both;
 }
@@ -114,7 +127,8 @@ a {
 .neomorph {
 	box-shadow: 
     8px 8px 12px 0 rgba(0, 0, 0, 0.7),
-    -4px -4px 6px 0 rgba(59, 59, 59, 0.4);
+    -4px -4px 6px 0 rgba(9, 9, 9, 0.4);
 }
+
 
 /* purgecss end ignore */

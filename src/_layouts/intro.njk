@@ -18,7 +18,7 @@
 </head>
 
 <body class="w-screen h-screen p-0 antialiased text-gray-200">
-	<svg class="absolute h-16 mt-8 moveBike z-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+	<svg class="absolute h-16 mt-10 moveBike z-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="10.806" y1="75" x2="140.488" y2="75">
 			<stop offset="0" stop-color="#ff1bc6" />
 			<stop offset="1" stop-color="#0066a6" />
@@ -28,25 +28,26 @@
 			fill="url(#SVGID_1_)" />
 	</svg>
 	{% include "overlayMenu.njk" %}
+	{# {% include "rightSideNav.njk" %} #}
 	<!-- vertical stripes  -->
 	<div class="relative">
 		<div class="neomorph absolute top-0 bg-pink-400 z-0" style="right:14%; width:2%; height:2500px;"></div>
 		<div class="absolute h-screen top-0 bg-gray-400 z-0" style="right:12%; width:2%; height:2500px;"></div>
-		<h1 class="absolute text-gray-400 text-2xl md:text-4xl font-serif text-center z-20"
-			style="right:6%; writing-mode: vertical-rl; text-orientation:sideways;height:600px;">Welcome to Bikeinfo.xyz
-		</h1>
+		<div class="absolute text-gray-400 text-2xl md:text-3xl font-serif text-center z-20"
+			style="right:4%; writing-mode: vertical-rl; text-orientation:sideways;height:600px;">Welcome to Bikeinfo.xyz
+		</div>
 	</div>
 	<!-- top title -->
-	<nav class="pl-5 md:pl-40">
+	<div class="pl-5 md:pl-40 w-1/2">
 		<a href="/" class="underline bg-pink-500 text-pink-500">
 			<h1 class="font-extrabold text-gray-400 font-sans text-4xl md:text-6xl text-left uppercase">bikeinfo.xyz
 			</h1>
 		</a>
-	</nav>
+	</div>
 
 	<main class="grid grid-cols-8 grid-rows-4 md:grid-rows-4 max-w-full">
 		<div
-			class="text-gray-400 text-sm md:text-lg col-start-1 col-span-8 mx-auto md:col-start-2 md:col-span-2 row-start-4 md:row-start-3 row-span-1 md:row-span-2 p-2 self-end z-50 ">
+			class="text-gray-400 text-sm md:text-lg col-start-1 col-span-8 mx-auto md:col-start-2 md:col-span-2 row-start-4 md:row-start-3 row-span-2 md:row-span-2 p-2 md:self-end z-50 ">
 			<div class="font-korSubtitle z-50 bg-gray-900 sm:bg-transparent"><span
 					class="text-pink-400 font-bold">Bikeinfo.xyz</span>는 슬기로운 자덕 생활에 도움이될 유용한 정보와
 				버지니아와 매릴랜드를 기반으로 활동하는 <span class="text-pink-400 font-bold">Team Korvelo</span> 소식을 안내합니다. 현 페이지에서 블로그,
@@ -58,7 +59,7 @@
 			ride with us<br>korvelo weekly ride</div>
 
 		<section
-			class="col-start-1 col-span-8 row-start-1 row-span-3 md:col-start-4 md:col-span-4 md:row-start-1 md:row-span-4 ">
+			class="col-start-2 col-span-6 row-start-1 row-span-3 md:col-start-4 md:col-span-4 md:row-start-1 md:row-span-4 ">
 			<div class="flex flex-col w-full flex-wrap">
 				<div class="relative">
 					<div class="absolute text-md md:text-3xl text-gray-900 font-extrabold uppercase text-right"
@@ -72,28 +73,28 @@
 	</main>
 
 
-	<div class="flex justify-center w-5/6 flex-wrap mt-8 ml-5 gap-3 z-50">
-		<div class="flex-initial block text-gray-300 font-bold text-md sm:text-lg pt-1 uppercase">Popular Tags:
+	<div class="flex justify-center w-5/6 flex-wrap mt-2 md:mt-8 ml-5 gap-3 z-50">
+		<div class="flex-initial block text-gray-300 md:font-bold text-sm sm:text-lg pt-1 uppercase">Popular Tags:&nbsp
 		</div>
 		{% for tag in collections.tagList %}
 		{% set tagUrl %}/tags/{{ tag }}/{% endset %}
 		<a href="{{ tagUrl | url }}"
-			class="border bg-gray-900 rounded-md px-2 self-center hover:bg-red-400 no-underline text-gray-300 mr-1">{{ tag }}</a>
+			class="bg-gray-900 rounded-md px-2 self-center hover:bg-red-500 no-underline text-gray-300 text-sm md:text-base mr-2 neomorph">#{{ tag }}</a>
 		{% endfor %}
 		
 	</div>
 
-	<div id="teamKorvelo" class="rounded relative w-5/6 mx-auto mt-5 md:mt-10 z-50 neomorph bg-gray-900"
-		style="background-color:101010;">
-		<a href="/collections/nPlusOne" class="underline text-red-500 z-50">
-			<h1 class="p-2 md:p-2 ml-4 font-bold font-serif text-gray-200 text-base md:text-2xl z-50">
+	<div id="teamKorvelo" class="rounded relative w-5/6 mx-auto mt-5 md:mt-10 z-50 neomorph bg-gray-900">
+		<a href="/collections/nPlusOne" class="underline text-pink-500 z-50">
+			<h1 class="ml-4 font-bold font-serif text-gray-300 text-base md:text-2xl z-50">
 				Team Korvelo - Infomation & Stats</h1>
 		</a>
 	</div>
 
 	<div class="mt-5 w-5/6 mx-auto flex flex-row flex-wrap z-30 justify-evenly">
-		<div class="flex-col rounded bg-gray-100">
-			<p class="uppercase font-serif text-2xl text-gray-900 p-2">team korvelo</p>
+		<div class="flex-col">
+			<p class="font-serif text-base text-gray-400 p-2">Member: 50</p>
+			<p class="font-serif text-base text-gray-400 p-2">Weekly ride</p>
 		</div>
 		<div class="z-50">
 			<iframe allowtransparency="true" frameborder='0' height='160' scrolling='no'
@@ -103,23 +104,24 @@
 	</div>
 
 
-	<div id="nPlusOne" class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 z-20 neomorph bg-gray-900"
-		style="background-color:101010;">
-		<a href="/bikes" class="underline text-yellow-500">
-			<h1 class="p-2 md:p-2 ml-4 font-bold font-serif text-gray-200 text-base md:text-2xl">
+	<div id="nPlusOne" class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 z-20 neomorph bg-gray-900">
+		<a href="/bikes" class="underline text-pink-500">
+			<h1 class="ml-4 font-bold font-serif text-gray-300 text-base md:text-2xl">
 				Rule #12 - <i>The correct number of bikes to own is N + 1.</i> </h1>
 		</a>
 	</div>
 
 
-	<section class="flex flex-row w-11/12 mx-auto mt-5" style="">
+	<section class="flex flex-row w-11/12 mx-auto mt-5" >
 		<div class="overflow-x-scroll flex flex-row rounded w-11/12 mx-auto z-20">
 			{% for bike in collections.bikes %}
 			<div class="p-4 flex-col flex flex-shrink-0">
 				<div class="relative">
-					<h1 class="absolute text-white text-2xl pt-4"
-						style="backdrop-filter:blur(5px) hue-rotate(120deg);height:300px;writing-mode: vertical-rl; text-orientation:sideways">
-						{{bike.data.title}}</h1>
+					<h3 class="absolute text-white pt-4 left-0 ml-4"
+						style="backdrop-filter:blur(5px) brightness(30%);
+						-webkit-backdrop-filter:blur(5px) brightness(30%); 
+						height:300px;writing-mode: vertical-rl; text-orientation:sideways">
+						{{bike.data.title}}</h3>
 				</div>
 				<a href="{{bike.url}}"><img src="{{bike.data.heroImage}}" class="object-cover object-center"
 						alt="{{bike.data.title}}" srcset="" style="width:250px; height:300px;"></a>
@@ -129,9 +131,9 @@
 		</div>
 	</section>
 
-	<div class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 neomorph bg-gray-900" style="background-color:101010;">
-		<a href="/collections/nPlusOne" class="underline text-green-500">
-			<h1 class="p-2  ml-4 font-bold font-serif text-gray-200 text-base md:text-2xl">Quality Over Quantity
+	<div class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 neomorph bg-gray-900">
+		<a href="/collections/nPlusOne" class="underline text-pink-500">
+			<h1 class="ml-4 font-bold font-serif text-gray-300 text-base md:text-2xl">Quality Over Quantity
 				</i> </h1>
 		</a>
 	</div>
@@ -139,11 +141,11 @@
 		<div class="overflow-x-scroll flex flex-row rounded w-11/12 mx-auto z-20">
 			<div class="p-4 flex-col flex flex-shrink-0">
 				<div class="relative">
-					<h1 class="absolute text-white text-2xl pt-4"
-						style="backdrop-filter:blur(5px) hue-rotate(120deg);height:300px;writing-mode: vertical-rl; text-orientation:sideways">
-						Tarmac SL7</h1>
+					<h3 class="absolute text-white pt-4 left-0 ml-4"
+						style="-webkit-backdrop-filter:blur(5px) brightness(30%);backdrop-filter:blur(5px) brightness(30%);height:300px;writing-mode: vertical-rl; text-orientation:sideways">
+						Tarmac SL7</h3>
 				</div>
-				<img src="https://source.unsplash.com/250x300/?crank" class="neomorph object-cover" alt="" srcset="">
+				<img src="https://source.unsplash.com/250x300/?parts" class="neomorph object-cover" alt="" srcset="">
 			</div>
 
 		</div>
@@ -169,7 +171,7 @@
 <script src="/static/app.bundled.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
 <script>
-	function navToggle() {
+	{# function navToggle() {
 		var btn = document.getElementById("courseBtn");
 		var overlay = document.getElementById("courseOverlay");
 		var xbtn = document.getElementById("closeBtn");
@@ -189,7 +191,7 @@
 		}
 
 		window.requestAnimationFrame(updateLax)
-	}
+	} #}
 </script>
 
 </html>
