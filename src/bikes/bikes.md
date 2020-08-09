@@ -1,6 +1,6 @@
 ---
 title: New bike gallery
-tags: bikes
+tags: bikes, nav
 postlist: bikes
 layout: postListing.njk
 description: abcd RULE No. 12 - The correct number of bikes to own is N + 1. While the minimum number of bikes one should own is three, the correct number is n+1, where n is the number of bikes currently owned. This equation may also be re-written as s-1, where S is the number of bikes owned that would result in separation from your partner.

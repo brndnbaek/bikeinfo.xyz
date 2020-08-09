@@ -82,16 +82,15 @@
 	</div>
 
 	<div id="teamKorvelo" class="rounded relative w-5/6 mx-auto mt-5 md:mt-10 z-50 neomorph bg-gray-900">
-		<a href="/collections/nPlusOne" class="underline text-pink-500 z-50">
+		<a href="/korvelo" class="underline text-pink-500 z-50">
 			<h1 class="ml-4 font-bold font-serif text-gray-300 text-base md:text-2xl z-50">
 				Team Korvelo - Infomation & Stats</h1>
 		</a>
 	</div>
 
 	<div class="mt-5 w-5/6 mx-auto flex flex-row flex-wrap z-30 justify-evenly">
-		<div class="flex-col">
-			<p class="font-serif text-base text-gray-400 p-2">Member: 50</p>
-			<p class="font-serif text-base text-gray-400 p-2">Weekly ride</p>
+		<div class="flex-col z-50">
+			<iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23090909&amp;ctz=America%2FNew_York&amp;src=aHMycGg3NWptZGZhYW9hcTJjMXBnNG10YmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23616161&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA" style="border-width:0" width="380" height="400" frameborder="0" scrolling="no"></iframe>
 		</div>
 		<div class="z-50">
 			<iframe allowtransparency="true" frameborder='0' height='160' scrolling='no'
@@ -152,18 +151,19 @@
 
 		<p>line break....</p>
 
-		{% for tag in collections.tagList %}
-		{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-		<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+		{% for post in collections.bikes | reverse %}
+		{%set data = post.data %}
+		{# {% if post.data.layout == 'singlePost.njk'%} #}
+		<p>{{data.title}} - {{post.date | readableDate}}</p>
+		{# {%endif%} #}
 		{% endfor %}
 
-		{% set postslist = collections.bikes %}
-		{% include "postslist.njk" %}
-		<p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>
+		
 	</div>
 	<div>
 
 	</div>
+
 </body>
 <script src="/static/app.bundled.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>

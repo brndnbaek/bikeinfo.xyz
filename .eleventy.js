@@ -2,10 +2,13 @@ const filters = require("./utils/filters.js");
 const transforms = require("./utils/transforms.js");
 const collections = require("./utils/collections.js");
 const { DateTime } = require("luxon");
+const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
+
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
+	eleventyConfig.addPlugin(embedYouTube);
 
 	// Filters
 	Object.keys(filters).forEach((filterName) => {

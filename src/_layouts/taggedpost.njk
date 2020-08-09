@@ -32,7 +32,7 @@
 		</a>
 	</nav>
 
-	<div class="relative imageOverlay flex flex-col content-center mt-10 w-4/5 ml-5 z-0 pb-24" style="">
+	<div class="relative flex flex-col content-center mt-10 w-4/5 ml-5 z-0 pb-24" style="">
 		<style>
 			.imageOverlay::after {
 				content: "";
@@ -47,43 +47,10 @@
 				opacity: 0.9;
 			}
 		</style>
-		<div class="relative w-5/6  ">
-			<div class="z-20 w-full relative">
-				<h1 class="text-gray-200 font-korTitle text-3xl mb-10">{{title}}</h1>
-				<p class="text-gray-400 font-sans text-base md:text-xl w-5/6 mb-4 line truncate">{{description}}</p>
-				<p class="text-gray-400 font-sans text-base md:text-xl w-5/6 mb-4 line">{{postlist}}</p>
-				
-			</div>
-		</div>
-	</div>
-
-	<div class="w-5/6 mx-auto text-red-200 flex flex-row flex-wrap">
-		{% set listing = collections[postlist] %}
-		{% set postlistCounter = collections.posts | length %}
-			
-			{% for item in	listing %}
-			{%if item.data.tags == "youtube" %}
-			<div class="bg-gray-900 rounded-md m-6">
-
-				<div class="relative"><a href="{{ item.url | url }}">{{ item.data.title }}</a></div>
-				<div class="relative">
-				<iframe width="560" height="315" src="{{item.data.featuredYoutube | url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-			</div>
-			{%else%}
-		<div class="bg-gray-900 rounded-md m-6">
-			<div class="relative"><a href="{{ item.url | url }}">{{ item.data.title }}</a></div>
-			<div class="relative">
-				<img class="" src="{{item.data.heroImage}}" alt="" srcset="">
-			</div>
-		</div>
-		{%endif%}
-			{% endfor %}
 		
-
-		
+	<div class="w-3/4 mx-auto text-red-200 flex flex-col gap-4">
+	{{content | safe}}
 	</div>
-	
 </body>
 <script src="/static/app.bundled.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
