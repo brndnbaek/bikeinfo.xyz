@@ -6,11 +6,7 @@
 	<!-- capture the CSS content as a Liquid variable -->
 	{% set css %}{% include "app.compiled.css" %}{% endset %}
 	<style>
-		{
-				{
-				css | safe
-			}
-		}
+		{{css | safe}}
 	</style>
 	{% else %}
 	<link rel="stylesheet" href="/static/app.compiled.css" />
