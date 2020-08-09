@@ -1,0 +1,10 @@
+<div class="flex justify-center w-5/6 flex-wrap mt-2 md:mt-8 ml-5 gap-3 z-50">
+    <div class="flex-initial block text-gray-300 md:font-bold text-sm sm:text-lg pt-1 uppercase">Popular Tags:&nbsp
+    </div>
+    {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <a href="{{ tagUrl | url }}"
+        class="bg-gray-900 rounded-md px-2 self-center hover:bg-red-500 no-underline text-gray-300 text-sm md:text-base mr-2 neomorph">#{{ tag }}</a>
+    {% endfor %}
+
+</div>
