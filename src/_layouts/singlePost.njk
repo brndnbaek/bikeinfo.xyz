@@ -132,21 +132,19 @@
 
 		{{ content | safe}}
 	</div>
-
+	<div id="discourse-comments"></div>
 
 </body>
 <script src="/static/app.bundled.js"></script>
-<script>
-	function navToggle() {
-		var btn = document.getElementById("courseBtn");
-		var overlay = document.getElementById("courseOverlay");
-		var xbtn = document.getElementById("closeBtn");
 
-		console.log("abcd");
-		// btn.classList.toggle("open");
-		overlay.classList.toggle("hidden");
-		// xbtn.classList.toggle("block");
-	}
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://forum.bikeinfo.xyz/',
+                     discourseEmbedUrl: 'https://bikeinfo.xyz{{page.url}}' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
 </script>
-
 </html>

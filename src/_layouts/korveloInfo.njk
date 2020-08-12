@@ -16,21 +16,8 @@
 
 <body class="w-screen h-screen p-0 antialiased text-gray-200">
 	{% include "overlayMenu.njk" %}
-	<!-- vertical stripes  -->
-	<div class="relative">
-		<div class="neomorph absolute top-0 bg-pink-400 z-0" style="right:14%; width:2%; height:2500px;"></div>
-		<div class="absolute h-screen top-0 bg-gray-300 z-0" style="right:12%; width:2%; height:2500px;"></div>
-		<h1 class="absolute text-gray-300 text-2xl md:text-4xl font-serif text-center z-20"
-			style="right:6%; writing-mode: vertical-rl; text-orientation:sideways;height:600px;">Team Korvelo Infomation
-		</h1>
-	</div>
-	<!-- top title -->
-	<nav class="pl-5 md:pl-40">
-		<a href="/" class="underline bg-pink-500 text-pink-500">
-			<h1 class="font-extrabold text-gray-200 font-sans text-4xl md:text-6xl text-left uppercase">Team Korvelo
-			</h1>
-		</a>
-	</nav>
+	{% include "verticalStripes.njk" %}
+	{% include "bikeinfoLogo.njk" %}
 
 	<div class="relative imageOverlay flex flex-col content-center mt-10 w-4/5 ml-5 z-0 pb-24" style="">
 		<style>
@@ -48,23 +35,23 @@
 			}
 		</style>
 		<div class="relative w-5/6  ">
-			<div class="z-20 w-full relative">
-				{# <h1 class="text-gray-200 font-korTitle text-3xl mb-10">{{title}}</h1> #}
-				<p class="text-gray-400 font-sans text-base md:text-xl  pb-40 mx-auto">Latest News</p>
-				{%for new in collections.news%}
+			<div class="z-20 w-full relative pb-20">
+				<h1 class="pt-20 text-center text-gray-200 font-korTitle text-3xl mb-10">Team Korvelo Manual</h1>
+				{# <p class="text-gray-400 font-sans text-base md:text-xl  pb-40 mx-auto">Latest News</p> #}
+				{# {%for new in collections.news%}
 				<a href="{{new.url | url}}">{{new.data.title}} - {{new.date|readableDate}}</a>
-				{%endfor%}
+				{%endfor%} #}
 				{# <p class="text-gray-400 font-sans text-base md:text-xl w-5/6 mb-4 line">{{postlist}}</p> #}
 				
 			</div>
 		</div>
 	</div>
 
-	<div class="mx-auto relative w-4/5 z-50">
-		<div class="z-50">
-			<iframe class="z-50 max-w-2xl sm:max-w-4xl md:w-full" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=aHMycGg3NWptZGZhYW9hcTJjMXBnNG10YmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23616161" style="border:solid 1px #777"  height="600" frameborder="0" scrolling="no"></iframe>
+	<div class="mx-auto relative w-full z-50">
+		<div class="z-50 w-5/6 mx-auto">
+			<iframe class="z-50 mx-auto max-w-screen-md min-w-full" style="" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=aHMycGg3NWptZGZhYW9hcTJjMXBnNG10YmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23616161" style="border:solid 1px #777"  height="600" frameborder="0" scrolling="no"></iframe>
 		</div>
-		<div class="mt-4 w-4/5 text-gray-300 text-base">캘린더 하단에 '+'를 클릭하시면 팀 이벤트를 본인 구글캘린더에 추가 할 수 있습니다. 팀 이벤트 작성과 참여 여부를 멤버들과 공유하고 싶으신분들은 korvelo@googlegroups.com으로 알려주시기 바랍니다.</div>
+		<div class="pl-4 mt-4 w-4/5 text-gray-300 text-base">캘린더 하단에 '+'를 클릭하시면 팀 이벤트를 본인 구글캘린더에 추가 할 수 있습니다. 팀 이벤트 작성과 참여 여부를 멤버들과 공유하고 싶으신분들은 korvelo@googlegroups.com으로 알려주시기 바랍니다.</div>
 	</div>
 	<div class="w-5/6 mx-auto text-red-200 flex flex-row flex-wrap">
 		{% set listing = collections[postlist] %}
@@ -80,10 +67,16 @@
 				</div>
 			</div>
 			{%else%}
-		<div class="bg-gray-900 rounded-md m-6">
-			<div class="relative"><a href="{{ item.url | url }}">{{ item.data.title }}</a></div>
-			<div class="relative">
-				<img class="" src="{{item.data.heroImage}}" alt="" srcset="">
+		<div class="mt-10 rounded-md m-6 flex flex-row">
+			<div class="relative w-2/5">
+				<a href="{{item.url|url}}"><img class="" src="{{item.data.heroImage}}" alt="" srcset=""></a>
+			</div>
+			<div class="relative flex flex-col" >
+				<a href="{{ item.url | url }}" class="text-2xl font-bold ml-4 mt-4">{{ item.data.title }}</a>
+				
+				
+					{{ item.data.discription }}
+				
 			</div>
 		</div>
 		{%endif%}
