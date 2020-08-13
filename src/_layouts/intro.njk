@@ -68,22 +68,30 @@
 
 	<div class="mt-5 w-5/6 mx-auto flex flex-row flex-wrap z-30 justify-evenly">
 		<div class="flex flex-col">
-			<p class="text-gray-200 text-lg font-bold text-center">Latest News</p>
+			<p class="text-green-400 text-lg font-bold text-center">Latest News</p>
 			{% for item in collections.news %}
 			<a href="{{item.url|url}}" class="text-gray-400">- {{item.data.title}}</a>
 			{%endfor%}
 		</div>
 		<div class="flex-col z-50 mb-2">
-			<p class="text-gray-200 text-lg font-bold text-center">Upcoming Events</p>
+			<p class="text-green-400 text-lg font-bold text-center">Upcoming Events</p>
 			<iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23090909&amp;ctz=America%2FNew_York&amp;src=aHMycGg3NWptZGZhYW9hcTJjMXBnNG10YmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23616161&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA" 
 			style="border-width:0"  height="400" frameborder="0" scrolling="no"
 			class="w-11/12"></iframe>
 		</div>
-		<div class="z-50 mt-2">
-			<p class="text-gray-200 text-lg font-bold mb-2 text-center">Weekly Stats</p>
-			<iframe allowtransparency="true" frameborder='0' height='160' scrolling='no'
-				src='https://www.strava.com/clubs/150475/latest-rides/1903597767594808fd16f324691a9a206e2a4cba?show_rides=false'
-				 class="w-11/12"></iframe>
+		<div class="z-50 mt-2 flex flex-col">
+			<div class="flex-0">
+				<p class="text-green-400 text-lg font-bold mb-2 text-center">Weekly Stats</p>
+				<iframe allowtransparency="true" frameborder='0' height='160' scrolling='no'
+					src='https://www.strava.com/clubs/150475/latest-rides/1903597767594808fd16f324691a9a206e2a4cba?show_rides=false'
+					 class="w-11/12"></iframe>
+			</div>
+			<div class="flex-1">
+				<p class="text-green-400 text-lg font-bold text-center mt-4">Favorite Courses</p>	
+				{% for each in collections.course%}
+				<a href="{{each.url|url}}" class="text-gray-400">- {{each.data.title}}</a>
+				{% endfor%}
+			</div>
 		</div>
 	</div>
 
