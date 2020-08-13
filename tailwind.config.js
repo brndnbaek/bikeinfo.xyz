@@ -25,7 +25,7 @@ module.exports = {
 		},
 	},
 	variants: {},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 	purge: process.env.NODE_ENV === "production"? {
 					enabled: true,
 					content: ["src/**/*.njk", "src/**/*.js"],
