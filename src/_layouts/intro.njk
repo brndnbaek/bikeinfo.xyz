@@ -56,7 +56,7 @@
 		</section>
 	</main> #}
 {% include "heroLarge.njk" %}
-{% include "popularTags.njk" %}
+{# {% include "popularTags.njk" %} #}
 	
 
 	<div id="teamKorvelo" class="rounded relative w-5/6 mx-auto mt-5 md:mt-10 z-50 neomorph bg-gray-900">
@@ -129,19 +129,52 @@
 				</i> </h1>
 		</a>
 	</div>
-	<section class="flex flex-row w-11/12 mx-auto mt-5" style="height:300px;">
+
+	<section class="flex flex-row w-11/12 mx-auto mt-5" >
 		<div class="overflow-x-scroll flex flex-row rounded w-11/12 mx-auto z-20">
+			{% for gear in collections.gears %}
 			<div class="p-4 flex-col flex flex-shrink-0">
 				<div class="relative">
 					<h3 class="absolute text-white pt-4 left-0 ml-4"
-						style="-webkit-backdrop-filter:blur(5px) brightness(30%);backdrop-filter:blur(5px) brightness(30%);height:300px;writing-mode: vertical-rl; text-orientation:sideways">
-						Tarmac SL7</h3>
+						style="backdrop-filter:blur(5px) brightness(30%);
+						-webkit-backdrop-filter:blur(5px) brightness(30%); 
+						height:300px;writing-mode: vertical-rl; text-orientation:sideways">
+						{{gear.data.title}}</h3>
 				</div>
-				<img src="https://source.unsplash.com/250x300/?parts" class="neomorph object-cover" alt="" srcset="">
+				<a href="{{gear.url}}"><img src="{{gear.data.heroImage}}" class="object-cover object-center"
+						alt="{{gear.data.title}}" srcset="" style="width:250px; height:300px;"></a>
 			</div>
+			{% endfor %}
 
 		</div>
 	</section>
+
+	<div class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 neomorph bg-gray-900">
+		<a href="/collections/nPlusOne" class="underline text-pink-500">
+			<h1 class="ml-4 font-bold font-sans text-gray-300 text-base md:text-2xl">Youtube
+				</i> </h1>
+		</a>
+	</div>
+	<section class="w-5/6 md:w-11/12 mx-auto mt-5" >
+		<div class="flex flex-row flex-wrap justify-center mx-auto z-20">
+			{% for thumbnail in collections.youtube %}
+			<div class="flex-col flex flex-initial justify-center items-center m-2 z-50" style="max-width:360px;">
+				<div class="absolute">
+					<h3 class="text-white text-base md:text-lg"
+						style="backdrop-filter:blur(5px) brightness(30%);
+						-webkit-backdrop-filter:blur(5px) brightness(30%);">
+						{{thumbnail.data.title}}</h3>
+				</div>
+				<a href="{{thumbnail.url}}"><img src="http://img.youtube.com/vi/{{thumbnail.data.youtubeID}}/0.jpg" 
+				class="object-cover object-center"
+						alt="{{gear.data.title}}" srcset="" ></a>
+			</div>
+			{% endfor %}
+
+		</div>
+	</section>
+	
+	
 </body>
 <script src="/static/app.bundled.js"></script>
 

@@ -72,29 +72,6 @@
 	
 </body>
 <script src="/static/app.bundled.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
-<script>
-	function navToggle() {
-		var btn = document.getElementById("courseBtn");
-		var overlay = document.getElementById("courseOverlay");
-		var xbtn = document.getElementById("closeBtn");
 
-		console.log("abcd");
-		// btn.classList.toggle("open");
-		overlay.classList.toggle("hidden");
-		// xbtn.classList.toggle("block");
-	}
-
-	window.onload = function () {
-		lax.setup() // init
-
-		const updateLax = () => {
-			lax.update(window.scrollY)
-			window.requestAnimationFrame(updateLax)
-		}
-
-		window.requestAnimationFrame(updateLax)
-	}
-</script>
 
 </html>

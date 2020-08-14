@@ -28,4 +28,5 @@ module.exports = {
 		// returning an array in addCollection works in Eleventy 0.5.3
 		return [...tagSet];
 	},
+	
 };
