@@ -15,7 +15,8 @@
 </head>
 
 <body class="w-screen h-screen p-0 antialiased text-gray-200">
-	<svg class="absolute h-16 mt-10 moveBike z-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+	{# gradient svg bike animation #}
+	{# <svg class="absolute z-50 h-16 mt-10 moveBike" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="10.806" y1="75" x2="140.488" y2="75">
 			<stop offset="0" stop-color="#ff1bc6" />
 			<stop offset="1" stop-color="#0066a6" />
@@ -23,34 +24,35 @@
 		<path
 			d="M114 60.6c-2.5 0-4.8.3-7.1 1l-3.6-9.7h.4c4.2 0 7.7-3.4 7.7-7.7s-3.4-7.7-7.7-7.7h-8.2c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5h8.2c1.5 0 2.7 1.2 2.7 2.7 0 1.5-1.2 2.7-2.7 2.7H55.4l-1.5-2.8h7.3c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5H47.9l-2.5-1.9c-1.1-.8-2.7-.7-3.5.4-.8 1.1-.7 2.7.4 3.5l3.2 2.5c.4.3 1 .5 1.5.5h1.5c0 .4.1.9.3 1.3l2.2 4.1L45.7 62c-2.7-.9-5.5-1.4-8.5-1.4-14.6 0-26.4 11.9-26.4 26.4 0 14.6 11.9 26.4 26.4 26.4 13.4 0 24.5-10.1 26.2-23.1h2.8c.9 3.5 3.6 6.2 7 7.1v3c0 1.4 1.1 2.5 2.5 2.5H83c1.4 0 2.5-1.1 2.5-2.5s-1.1-2.5-2.5-2.5h-4.8v-.5c4.2-1.1 7.3-4.9 7.3-9.5 0-2.5-1-4.8-2.6-6.6l16.2-26.5 3.1 8.3c-8.7 4.3-14.7 13.3-14.7 23.7 0 14.6 11.9 26.4 26.4 26.4s26.4-11.9 26.4-26.4c.2-14.3-11.7-26.2-26.3-26.2zM73.1 78.7L71.6 76h1.7v2.6c-.1.1-.1.1-.2.1zm5.2 0v-5.1c0-1.4-1.1-2.5-2.5-2.5h-6.9L58.1 51.9h37.2l-16.5 27c-.2-.1-.3-.2-.5-.2zM54.2 55l14.6 26.2c-1.1 1.2-2 2.6-2.4 4.2h-2.7A26.5 26.5 0 0 0 50.3 64l3.9-9zm4.4 30.4H41l7.2-16.7c5.9 3.5 9.9 9.6 10.4 16.7zm-21.4 23.1c-11.8 0-21.4-9.6-21.4-21.4 0-11.8 9.6-21.4 21.4-21.4 2.3 0 4.4.4 6.5 1L35 87c-.3.8-.3 1.7.2 2.4s1.2 1.1 2.1 1.1h21.1c-1.6 10.2-10.5 18-21.2 18zm41.1-16.3v-5c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5v5c-1.4-.8-2.3-2.3-2.3-4.1 0-2.6 2.2-4.8 4.8-4.8.9 0 1.8.3 2.5.7.1 0 .1.1.2.1h.1c1.2.9 2 2.3 2 3.9 0 1.8-1 3.3-2.3 4.2zm35.7 16.3c-11.8 0-21.4-9.6-21.4-21.4 0-8.2 4.6-15.4 11.4-19l7.7 20.7c.4 1 1.3 1.6 2.3 1.6.3 0 .6-.1.9-.2 1.3-.5 2-1.9 1.5-3.2l-7.7-20.8c1.7-.4 3.5-.7 5.3-.7 11.8 0 21.4 9.6 21.4 21.4.1 12-9.5 21.6-21.4 21.6z"
 			fill="url(#SVGID_1_)" />
-	</svg>
+	</svg> #}
+	
 	{% include "overlayMenu.njk" %}
 	{# {% include "rightSideNav.njk" %} #}
-	{% include "verticalStripes.njk" %}
+	{# {% include "verticalStripes.njk" %} #}
 	{% include "bikeinfoLogo.njk" %}
 
-	{# <main class="grid grid-cols-8 grid-rows-4 md:grid-rows-4 max-w-full">
+	{# <main class="grid max-w-full grid-cols-8 grid-rows-4 md:grid-rows-4">
 		<div
-			class="text-gray-400 text-sm md:text-lg col-start-1 col-span-8 mx-auto md:col-start-2 md:col-span-2 row-start-4 md:row-start-3 row-span-2 md:row-span-2 p-2 md:self-end z-50 ">
-			<div class="font-korSubtitle z-50 bg-gray-900 sm:bg-transparent"><span
-					class="text-pink-400 font-bold">Bikeinfo.xyz</span>는 슬기로운 자덕 생활에 도움이될 유용한 정보와
-				버지니아와 매릴랜드를 기반으로 활동하는 <span class="text-pink-400 font-bold">Team Korvelo</span> 소식을 안내합니다. 현 페이지에서 블로그,
+			class="z-50 col-span-8 col-start-1 row-span-2 row-start-4 p-2 mx-auto text-sm text-gray-400 md:text-lg md:col-start-2 md:col-span-2 md:row-start-3 md:row-span-2 md:self-end ">
+			<div class="z-50 bg-gray-900 font-korSubtitle sm:bg-transparent"><span
+					class="font-bold text-pink-400">Bikeinfo.xyz</span>는 슬기로운 자덕 생활에 도움이될 유용한 정보와
+				버지니아와 매릴랜드를 기반으로 활동하는 <span class="font-bold text-pink-400">Team Korvelo</span> 소식을 안내합니다. 현 페이지에서 블로그,
 				리뷰글들을 찾아보실수 있으며 Online forum을 통해 질문 또는 자전거 관련글을 작성할 수 있습니다. </div>
 		</div>
 
 		<div
-			class="col-start-2 col-span-4 row-start-2 md:row-start-2 row-span-1 text-md md:text-4xl text-orange-400 font-extrabold uppercase z-20 self-start md:self-center mx-auto">
+			class="z-20 self-start col-span-4 col-start-2 row-span-1 row-start-2 mx-auto font-extrabold text-orange-400 uppercase md:row-start-2 text-md md:text-4xl md:self-center">
 			ride with us<br>korvelo weekly ride</div>
 
 		<section
-			class="col-start-2 col-span-6 row-start-1 row-span-3 md:col-start-4 md:col-span-4 md:row-start-1 md:row-span-4 ">
-			<div class="flex flex-col w-full flex-wrap">
+			class="col-span-6 col-start-2 row-span-3 row-start-1 md:col-start-4 md:col-span-4 md:row-start-1 md:row-span-4 ">
+			<div class="flex flex-col flex-wrap w-full">
 				<div class="relative">
-					<div class="absolute text-md md:text-3xl text-gray-900 font-extrabold uppercase text-right"
+					<div class="absolute font-extrabold text-right text-gray-900 uppercase text-md md:text-3xl"
 						style="right:19%; top:2%;">blog<br>review<br>New rider info</div>
-					<div class="absolute text-lg md:text-4xl text-orange-200 font-extrabold uppercase"
+					<div class="absolute text-lg font-extrabold text-orange-200 uppercase md:text-4xl"
 						style="left:20%; top:80%;">ready to join?</div>
-					<img class="neomorph object-cover object-left" src="/static/korvelo_intoFog.jpeg" alt="" srcset="">
+					<img class="object-cover object-left neomorph" src="/static/korvelo_intoFog.jpeg" alt="" srcset="">
 				</div>
 			</div>
 		</section>
@@ -59,35 +61,35 @@
 {# {% include "popularTags.njk" %} #}
 	
 
-	<div id="teamKorvelo" class="rounded relative w-5/6 mx-auto mt-5 md:mt-10 z-50 neomorph bg-gray-900">
-		<a href="/korvelo" class="underline text-pink-500 z-50">
-			<h1 class="ml-4 font-bold font-sans text-gray-300 text-base md:text-2xl z-50">
+	<div id="teamKorvelo" class="relative z-50 w-5/6 mx-auto mt-8 bg-gray-900 rounded md:mt-10 neomorph">
+		<a href="/korvelo" class="z-50 text-pink-500 underline">
+			<h1 class="z-50 ml-4 font-sans text-base font-bold text-gray-300 md:text-2xl">
 				Team Korvelo - Infomation & Stats</h1>
 		</a>
 	</div>
 
-	<div class="mt-5 w-5/6 mx-auto flex flex-row flex-wrap z-30 justify-evenly">
+	<div class="z-30 flex flex-row flex-wrap w-5/6 mx-auto mt-5 justify-evenly">
 		<div class="flex flex-col">
-			<p class="text-green-400 text-lg font-bold text-center">Latest News</p>
+			<p class="text-lg font-bold text-center text-green-400">Latest News</p>
 			{% for item in collections.news %}
 			<a href="{{item.url|url}}" class="text-gray-400">- {{item.data.title}}</a>
 			{%endfor%}
 		</div>
-		<div class="flex-col z-50 mb-2">
-			<p class="text-green-400 text-lg font-bold text-center">Upcoming Events</p>
+		<div class="z-50 flex-col mb-2">
+			<p class="text-lg font-bold text-center text-green-400">Upcoming Events</p>
 			<iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23090909&amp;ctz=America%2FNew_York&amp;src=aHMycGg3NWptZGZhYW9hcTJjMXBnNG10YmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23616161&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA" 
 			style="border-width:0"  height="400" frameborder="0" scrolling="no"
 			class="w-11/12"></iframe>
 		</div>
-		<div class="z-50 mt-2 flex flex-col">
+		<div class="z-50 flex flex-col mt-2">
 			<div class="flex-0">
-				<p class="text-green-400 text-lg font-bold mb-2 text-center">Weekly Stats</p>
+				<p class="mb-2 text-lg font-bold text-center text-green-400">Weekly Stats</p>
 				<iframe allowtransparency="true" frameborder='0' height='160' scrolling='no'
 					src='https://www.strava.com/clubs/150475/latest-rides/1903597767594808fd16f324691a9a206e2a4cba?show_rides=false'
 					 class="w-11/12"></iframe>
 			</div>
 			<div class="flex-1">
-				<p class="text-green-400 text-lg font-bold text-center mt-4">Favorite Courses</p>	
+				<p class="mt-4 text-lg font-bold text-center text-green-400">Favorite Courses</p>	
 				{% for each in collections.course%}
 				<a href="{{each.url|url}}" class="text-gray-400">- {{each.data.title}}</a>
 				{% endfor%}
@@ -96,20 +98,20 @@
 	</div>
 
 
-	<div id="nPlusOne" class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 z-20 neomorph bg-gray-900">
-		<a href="/bikes" class="underline text-pink-500">
-			<h1 class="ml-4 font-bold font-sans text-gray-300 text-base md:text-2xl">
+	<div id="nPlusOne" class="relative z-20 w-5/6 mx-auto mt-5 bg-gray-900 rounded md:mt-20 neomorph">
+		<a href="/bikes" class="text-pink-500 underline">
+			<h1 class="ml-4 font-sans text-base font-bold text-gray-300 md:text-2xl">
 				Rule #12 - <i>The correct number of bikes to own is N + 1.</i> </h1>
 		</a>
 	</div>
 
 
 	<section class="flex flex-row w-11/12 mx-auto mt-5" >
-		<div class="overflow-x-scroll flex flex-row rounded w-11/12 mx-auto z-20">
+		<div class="z-20 flex flex-row w-11/12 mx-auto overflow-x-scroll rounded">
 			{% for bike in collections.bikes %}
-			<div class="p-4 flex-col flex flex-shrink-0">
+			<div class="flex flex-col flex-shrink-0 p-4">
 				<div class="relative">
-					<h3 class="absolute text-white pt-4 left-0 ml-4"
+					<h3 class="absolute left-0 pt-4 ml-4 text-white"
 						style="backdrop-filter:blur(5px) brightness(30%);
 						-webkit-backdrop-filter:blur(5px) brightness(30%); 
 						height:300px;writing-mode: vertical-rl; text-orientation:sideways">
@@ -123,19 +125,19 @@
 		</div>
 	</section>
 
-	<div class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 neomorph bg-gray-900">
-		<a href="/collections/nPlusOne" class="underline text-pink-500">
-			<h1 class="ml-4 font-bold font-sans text-gray-300 text-base md:text-2xl">Quality Over Quantity
+	<div class="relative w-5/6 mx-auto mt-5 bg-gray-900 rounded md:mt-20 neomorph">
+		<a href="/collections/nPlusOne" class="text-pink-500 underline">
+			<h1 class="ml-4 font-sans text-base font-bold text-gray-300 md:text-2xl">Quality Over Quantity
 				</i> </h1>
 		</a>
 	</div>
 
 	<section class="flex flex-row w-11/12 mx-auto mt-5" >
-		<div class="overflow-x-scroll flex flex-row rounded w-11/12 mx-auto z-20">
+		<div class="z-20 flex flex-row w-11/12 mx-auto overflow-x-scroll rounded">
 			{% for gear in collections.gears %}
-			<div class="p-4 flex-col flex flex-shrink-0">
+			<div class="flex flex-col flex-shrink-0 p-4">
 				<div class="relative">
-					<h3 class="absolute text-white pt-4 left-0 ml-4"
+					<h3 class="absolute left-0 pt-4 ml-4 text-white"
 						style="backdrop-filter:blur(5px) brightness(30%);
 						-webkit-backdrop-filter:blur(5px) brightness(30%); 
 						height:300px;writing-mode: vertical-rl; text-orientation:sideways">
@@ -149,18 +151,18 @@
 		</div>
 	</section>
 
-	<div class="relative rounded w-5/6 mx-auto mt-5 md:mt-20 neomorph bg-gray-900">
-		<a href="/collections/nPlusOne" class="underline text-pink-500">
-			<h1 class="ml-4 font-bold font-sans text-gray-300 text-base md:text-2xl">Youtube
+	<div class="relative w-5/6 mx-auto mt-5 bg-gray-900 rounded md:mt-20 neomorph">
+		<a href="/collections/nPlusOne" class="text-pink-500 underline">
+			<h1 class="ml-4 font-sans text-base font-bold text-gray-300 md:text-2xl">Youtube
 				</i> </h1>
 		</a>
 	</div>
-	<section class="w-5/6 md:w-11/12 mx-auto mt-5" >
-		<div class="flex flex-row flex-wrap justify-center mx-auto z-20">
+	<section class="w-5/6 mx-auto mt-5 md:w-11/12" >
+		<div class="z-20 flex flex-row flex-wrap justify-center mx-auto">
 			{% for thumbnail in collections.youtube %}
-			<div class="flex-col flex flex-initial justify-center items-center m-2 z-50" style="max-width:360px;">
+			<div class="z-50 flex flex-col items-center justify-center flex-initial m-2" style="max-width:360px;">
 				<div class="absolute">
-					<h3 class="text-white text-base md:text-lg"
+					<h3 class="text-base text-white md:text-lg"
 						style="backdrop-filter:blur(5px) brightness(30%);
 						-webkit-backdrop-filter:blur(5px) brightness(30%);">
 						{{thumbnail.data.title}}</h3>

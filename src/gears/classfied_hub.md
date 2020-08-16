@@ -1,7 +1,7 @@
 ---
 title: Classified 2 speed rear hub
 description: 전자식 변속 허브
-tags: gears
+tags: ['gears', 'hub']
 heroImage: /static/gears/classified/smarthub.jpg
 layout: singlePost.njk
 ---

@@ -32,7 +32,7 @@ h1 {
 }
 
 p {
-	@apply font-korSubtitle leading-relaxed;
+	@apply leading-relaxed font-korSubtitle;
 }
 .rocket {
 	animation: rocket 0.7s linear infinite both;
@@ -131,5 +131,9 @@ p {
     -4px -4px 6px 0 rgba(9, 9, 9, 0.4);
 }
 
+.textGradient {
+	background:-webkit-gradient(linear,left top, left bottom, from(#ff0052), to(#8e2b88)); 
+        -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
 
 /* purgecss end ignore */
