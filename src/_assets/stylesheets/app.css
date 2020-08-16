@@ -17,9 +17,7 @@ button:focus {
 	outline-offset: 4px;
 }
 
-a {
-	@apply text-gray-300 font-korSubtitle;
-}
+
 h3 {
 	@apply text-xl font-korTitle;
 }
@@ -32,7 +30,7 @@ h1 {
 }
 
 p {
-	@apply leading-relaxed font-korSubtitle;
+	@apply leading-relaxed text-gray-400 font-korSubtitle;
 }
 .rocket {
 	animation: rocket 0.7s linear infinite both;
