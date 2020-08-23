@@ -18,6 +18,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", dateObj => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
 	 });
+	eleventyConfig.addFilter("upcomingDate", dateObj => {
+		return DateTime.fromISO(dateObj, {zone: 'utc'}).toFormat("ff");
+	 });
 
 	// Transforms
 	Object.keys(transforms).forEach((transformName) => {

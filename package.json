@@ -22,6 +22,7 @@
 		"autoprefixer": "^9.8.6",
 		"babel-loader": "^8.1.0",
 		"del-cli": "^3.0.1",
+		"googleapis": "^59.0.0",
 		"html-minifier": "^4.0.0",
 		"luxon": "^1.24.1",
 		"npm-run-all": "^4.1.5",
@@ -34,7 +35,9 @@
 	"dependencies": {
 		"@fullhuman/postcss-purgecss": "^2.3.0",
 		"@tailwindcss/typography": "^0.2.0",
+		"axios": "^0.19.2",
 		"cssnano": "^4.1.10",
+		"dotenv": "^8.2.0",
 		"eleventy-plugin-youtube-embed": "^1.4.3"
 	}
 }
