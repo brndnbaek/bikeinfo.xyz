@@ -69,7 +69,7 @@
 	</div>
 
 	<div class="z-30 flex flex-row flex-wrap justify-around w-5/6 mx-auto mt-5">
-		<div class="flex flex-col w-1/3">
+		<div class="flex flex-col md:w-1/3">
 			<p class="text-lg font-bold text-center text-green-400">Latest News</p>
 			<ol>
 				{% for item in collections.news | reverse %}
@@ -108,8 +108,30 @@
 				{% for each in collections.course%}
 				<a href="{{each.url|url}}" class="text-gray-400">- {{each.data.title}}</a>
 				{% endfor%}
+				
 			</div>
 		</div>
+		<div id="disqus_thread" class="w-11/12 md:w-5/6"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		
+		var disqus_config = function () {
+		this.page.url = 'https://bikeinfo.xyz';  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = 'landingPage'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://bikeinfo-xyz.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+									
 	</div>
 
 

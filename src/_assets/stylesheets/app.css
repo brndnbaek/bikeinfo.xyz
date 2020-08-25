@@ -19,8 +19,14 @@ button:focus {
 
 
 h3 {
-	@apply text-xl font-korTitle;
+	@apply text-xl text-gray-400 font-korTitle;
 }
+
+.prose h3 {
+	@apply text-xl text-gray-400 font-korTitle;
+}
+
+
 h2 {
 	@apply text-2xl font-korTitle;
 }
@@ -133,5 +139,6 @@ p {
 	background:-webkit-gradient(linear,left top, left bottom, from(#ff0052), to(#8e2b88)); 
         -webkit-background-clip:text; -webkit-text-fill-color:transparent;
 }
+
 
 /* purgecss end ignore */
