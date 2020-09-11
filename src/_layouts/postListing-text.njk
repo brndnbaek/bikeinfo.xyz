@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include "head.njk" %} {% if site.env %}
+	<!-- capture the CSS content as a Liquid variable -->
+	{% set css %}{% include "app.compiled.css" %}{% endset %}
+	<style>
+		{{css | safe}}
+	</style>
+	{% else %}
+	<link rel="stylesheet" href="/static/app.compiled.css" />
+	{% endif %}
+
+</head>
+
+<body class="w-screen h-screen p-0 antialiased text-gray-200">
+	{% include "overlayMenu.njk" %}
+	{% include "verticalStripes.njk" %}
+	{% include "bikeinfoLogo.njk" %}
+	
+		<div class="relative z-0 w-4/5 mx-auto ml-5 imageOverlay" >
+			<style>
+				.imageOverlay::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 10%;
+					width:90%;
+					height:90%;
+					background-image: radial-gradient(ellipse closest-side, rgba(0,0,0,0.6), #090909), url({{heroImage}});
+					background-size: cover;
+					background-repeat: no-repeat;
+					opacity: 0.9;
+				}
+			</style>
+			<div class="relative">
+				<div class="relative z-20 flex-col block p-10 align-center">
+					<h1 class="mb-20 text-3xl text-center text-gray-200 font-korTitle">{{title}}</h1>
+					<p class="w-3/4 pb-20 mt-10 font-sans text-base text-gray-400 md:text-xl sm:pb-40">{{description}}</p>
+					
+				</div>
+			</div>
+		</div>
+	
+
+	<div class="flex flex-row flex-wrap w-5/6 mx-auto">
+			
+			{% for item in	collections.blog | reverse %}
+			<div class="relative flex flex-col w-3/4 m-6 prose-xl bg-blue-900 rounded-md neomorph" x-data="{open:false}">
+				<h3 class="w-full px-3 pt-2 pb-0 text-indigo-200 cursor-pointer" @click="open=true">
+				{{item.data.title}}
+				</h3>
+				<h4 class="w-full px-3 text-black" >
+				#{{loop.index}} Blog Post - {{item.data.date | readableDate}}
+				</h4>
+				<article class="w-full px-5 text-gray-300" x-show="open" @click.away="open=false">
+				{{item.templateContent | striptags(true) | truncate(200) }}
+				<p class="text-center"><a class="px-2 py-1 text-base text-black bg-green-500 rounded-md" href="{{item.url}}">Read More</a></p>
+				</article>
+			</div>
+			{% endfor %}
+	</div>
+	
+</body>
+<script src="/static/app.bundled.js"></script>
+
+
+</html>

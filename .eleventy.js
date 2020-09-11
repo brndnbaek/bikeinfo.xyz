@@ -5,6 +5,17 @@ const { DateTime } = require("luxon");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
+	// integrate Alpine.js 
+	eleventyConfig.addPassthroughCopy({
+		"./node_modules/alpinejs/dist/alpine.js": "./js/alpine.js",
+	});
+	
+	// excerpt extraction from content
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: "---",
+		excerpt_alias: 'myExcerpt'
+	});
 
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
@@ -16,7 +27,7 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("readableDate", dateObj => {
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLL dd, yyyy");
 	 });
 	eleventyConfig.addFilter("upcomingDate", dateObj => {
 		return DateTime.fromISO(dateObj, {zone: 'utc'}).toFormat("ff");

@@ -57,19 +57,19 @@
 			}
 		</style>
 
-		<div class="relative w-5/6 imageOverlay mx-auto">
-			<div class="z-20 w-full relative mt-4">
-				<a class="no-underline bg-pink-400 mt-4" href="/">
-					<span class=" p-4 font-extrabold text-center text-gray-200 font-korTitle sm:text-4xl md:text-5xl">
+		<div class="relative w-5/6 mx-auto imageOverlay">
+			<div class="relative z-20 w-full mt-4">
+				<a class="mt-4 no-underline bg-pink-400" href="/">
+					<span class="p-4 font-extrabold text-center text-gray-200 font-korTitle sm:text-4xl md:text-5xl">
 						BIKEINFO.XYZ
 					</span>
 				</a>
 
-				<h1 class="text-gray-200 text-xl pt-12 mb-24 mt-10 text-right">Article -
+				<h1 class="pt-12 mt-10 mb-24 text-xl text-right text-gray-200">Article -
 					{{page.date | readableDate}}</h1>
-				<h1 class="text-gray-200 mt-20 text-center pb-48 ">{{title}}</h1>
+				<h1 class="pb-48 mt-20 text-center text-indigo-300 ">{{title}}</h1>
 				{% for tag in tags%}
-				<a href="/tags/{{tag}}" class="text-green-400 text-xl no-underline">
+				<a href="/tags/{{tag}}" class="text-xl text-green-400 no-underline">
 					#{{tag}},&nbsp;
 				</a>
 				{%endfor%}
@@ -80,7 +80,7 @@
 	<!-- grid setup for portrait image on left with simple banners overlay -->
 
 
-	<div class="text-gray-300 w-4/5 contentImage mx-auto leading-loose sm:text-lg prose md:prose-lg lg:prose-xl max-w-none">
+	<div class="w-4/5 mx-auto leading-loose prose text-gray-300 bg-gray-900 rounded-md contentImage sm:text-lg md:prose-lg lg:prose-xl max-w-none" style="h2{text-green-600;}">
 
 		{{ content | safe}}
 	</div>
