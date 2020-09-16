@@ -123,7 +123,7 @@
 	
 	<section>
 		<div class="grid w-5/6 grid-flow-row py-8 mx-auto">
-				{% for item in collections.blog%}
+				{% for item in collections.blog | reverse %}
 					<li><a class="text-lg text-gray-400" href="{{item.url}}">{{item.data.title}}</a></li>
 				{% endfor%}
 			</div>
