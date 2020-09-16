@@ -31,3 +31,5 @@ fields:
       format: markdown
   label: description
   description: manual excerpt
+pages:
+- src/blog/카본휠이-파리-루베-코블스톤에-정착되는-과정.md
