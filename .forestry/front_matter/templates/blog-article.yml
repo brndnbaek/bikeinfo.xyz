@@ -16,6 +16,9 @@ fields:
   name: date
   label: date
   default: '2020-09-16T18:08:29Z'
+  config:
+    display_utc: false
+    export_format: YYYY-MM-DD
 - name: heroimage
   type: file
   config:
