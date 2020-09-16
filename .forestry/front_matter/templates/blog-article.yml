@@ -8,9 +8,26 @@ fields:
 - type: text
   name: layout
   label: layout
+  default: singlePost.njk
 - type: text
   name: tags
   label: tags
 - type: datetime
   name: date
   label: date
+  default: '2020-09-16T18:08:29Z'
+- name: heroimage
+  type: file
+  config:
+    maxSize: 64
+  label: heroImage
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: description
+  description: manual excerpt
